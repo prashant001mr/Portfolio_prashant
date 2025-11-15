@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #0f172a; color: #fff; }
+
+    /* Navbar */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 50px; background: #1e293b; position: sticky; top: 0;
+      z-index: 1000;
+    }
+    header h1 { color: #38bdf8; }
+    nav a {
+      color: #fff; text-decoration: none; margin: 0 12px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #38bdf8; }
+
+    /* Hero */
+    .hero {
+      height: 80vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero p { color: #94a3b8; max-width: 600px; }
+
+    /* Section */
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    h2.section-title { color: #38bdf8; margin-bottom: 20px; text-align: center; }
+
+    /* About */
+    .about {
+      background: #1e293b; padding: 30px; border-radius: 12px;
+      display: flex; flex-direction: column; gap: 15px; text-align: center;
+    }
+    .about p { color: #cbd5e1; line-height: 1.6; }
+
+    /* Skills */
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .skill {
+      background: #1e293b; padding: 10px 16px; border-radius: 8px;
+    }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
+    .project {
+      background: #1e293b; padding: 16px; border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: translateY(-6px); }
+
+    /* Contact */
+    form { display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin: auto; }
+    input, textarea {
+      padding: 10px; border-radius: 6px; border: none; outline: none;
+    }
+    button {
+      background: #38bdf8; border: none; padding: 10px; border-radius: 6px;
+      cursor: pointer; font-weight: bold;
+    }
+    button:hover { background: #0ea5e9; }
+    #formResult { text-align: center; margin-top: 10px; color: #94a3b8; }
+
+    /* Footer */
+    footer {
+      background: #1e293b; padding: 12px; text-align: center; color: #94a3b8;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed; inset: 0; background: #0f172a;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; flex-direction: column;
+    }
+    .spinner {
+      width: 50px; height: 50px; border: 6px solid rgba(255,255,255,0.2);
+      border-top: 6px solid #38bdf8; border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+    <p style="margin-top:10px; color:#94a3b8;">Loading...</p>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <h1>prashant</h1>
+    <nav>
+      <a href="">About</a>
+      <a href="">Skills</a>
+      <a href="">Projects</a>
+      <a href="./contact.html">Contact</a>
+      
+      
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h2>Hi, I'm Prashant Mishra 👋</h2>
+    <p>A Full-Stack Developer & BCA Student who loves building projects in React, Python, and exploring cybersecurity.</p>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+      <p>Hello! I'm <b>Prashant Mishra</b>, a passionate web developer and tech enthusiast. Currently pursuing my BCA, I specialize in <b>Full-Stack Development</b> and love experimenting with <b>Data Analysis</b> and <b>Cybersecurity</b>.</p>
+      <p>I enjoy solving coding challenges, building real-world projects, and continuously learning new technologies to improve my skills.</p>
+      <p>When I’m not coding, I like exploring tech blogs, learning ethical hacking, and contributing to small open-source projects.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Python</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Password Manager</h3>
+        <p>A simple JS password manager using Web Crypto.</p>
+      </div>
+      <div class="project">
+        <h3>Tic Tac Toe</h3>
+        <p>Python console game with AI logic.</p>
+      </div>
+      <div class="project">
+        <h3>E-Commerce</h3>
+        <p>React multipage demo with Context API cart system.</p>
+      </div>
+        <div class="project">
+        <h3>TO-DO LIST</h3>
+        <p>Make styleish to do list with help of react js , tailwind css</p>
+      </div>
+       <div class="project">
+        <h3>Wheather App</h3>
+        <p>Make styleish wheather app with help of react js , tailwind css</p>
+      </div>
+      <div class="project">
+        <h3>calculator</h3>
+        <p>Make styleish calculator with help of react js , tailwind css</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <!-- <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formResult"></p>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+  Made with ❤️ prashant mishra & Team
+  </footer>
+
+  <script>
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.style.display = 'none', 500);
+    });
+
+    
+
+    // // Smooth scroll
+    // document.querySelectorAll('nav a').forEach(a => {
+    //   a.addEventListener('click', e => {
+    //     e.preventDefault();
+    //     document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    //   });
+    // });
+  </script>
+</body>
+</html>
